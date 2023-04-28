@@ -58,3 +58,8 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 ## Get to Know the Author
 **Peter Krause**
 started his professional IT journey back in the days of mainframes. Very early on, he came into contact with Microsoft technology, which has accompanied him constantly ever since. In his first books, he dealt with the first versions of modern web technology and shortly thereafter with the topic of Microsoft Dynamics CRM, which gave rise to today's Power Platform. Having held almost every role in IT projects as a consultant and software architect, today he helps companies successfully move to the Microsoft Cloud. In addition to his numerous certifications in Azure, Dynamics and Power Platform, he is also an MCT in these areas.
+
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781803245942">https://packt.link/free-ebook/9781803245942 </a> </p>
