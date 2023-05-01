@@ -1,0 +1,2 @@
+SET output1 TO op1 + op2
+Display.ShowMessageDialog.ShowMessage Title: $'''Welcome %username%''' Message: $'''The result is: %output1%''' Icon: Display.Icon.None Buttons: Display.Buttons.OK DefaultButton: Display.DefaultButton.Button1 IsTopMost: False

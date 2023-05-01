@@ -1,0 +1,6 @@
+Variables.CreateNewDatatable InputTable: { ^['Manufactor', 'Country'], [$'''BMW''', $'''Germany'''], [$'''Aston Martin''', $'''United Kingdom'''], [$'''Chrysler''', $'''USA'''], [$'''Fiat''', $'''Italy'''], [$'''Citroen''', $'''France'''], [$'''Toyota''', $'''Japan'''] } DataTable=> CarsTable
+Variables.AddRowToDataTable.AppendRowToDataTable DataTable: CarsTable RowToAdd: ['Chevrolet', 'USA']
+Variables.FindOrReplaceInDataTable.FindItemInDataTableEverywhere DataTable: CarsTable AllMatches: True ValueToFind: $'''USA''' MatchCase: False MatchEntireCellContents: False DataTableMatches=> DataTableMatches
+LOOP FOREACH CurrentItem IN DataTableMatches
+    Variables.ModifyDataTableItem DataTable: CarsTable ColumnNameOrIndex: CurrentItem['Column'] RowIndex: CurrentItem['Row'] Value: $'''United States'''
+END

@@ -1,0 +1,8 @@
+Variables.CreateNewList List=> List
+Variables.AddItemToList Item: $'''Mercedes''' List: List
+Variables.AddItemToList Item: $'''Aston Martin''' List: List
+Variables.AddItemToList Item: $'''BMW''' List: List
+Variables.AddItemToList Item: $'''Chrysler''' List: List
+Variables.AddItemToList Item: $'''Fiat''' List: List
+Variables.AddItemToList Item: $'''Toyota''' List: List
+SET NewVar TO List[0:3]

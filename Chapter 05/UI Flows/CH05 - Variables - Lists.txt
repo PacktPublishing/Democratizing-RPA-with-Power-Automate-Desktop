@@ -1,0 +1,8 @@
+File.ReadTextFromFile.ReadTextAsList File: $'''C:\\Users\\pkpad\\Documents\\Cars List.txt''' Encoding: File.TextFileEncoding.UTF8 Contents=> Cars
+Variables.AddItemToList Item: $'''Ferrari''' List: Cars
+Variables.AddItemToList Item: $'''BMW''' List: Cars
+Variables.AddItemToList Item: $'''Mercedes''' List: Cars
+Variables.SortList.SortList List: Cars
+Variables.RemoveDuplicateItemsFromList List: Cars IgnoreCase: False
+Variables.ShuffleList List: Cars
+Display.ShowMessageDialog.ShowMessage Title: $'''List Extract''' Message: Cars[0:2] Icon: Display.Icon.None Buttons: Display.Buttons.OK DefaultButton: Display.DefaultButton.Button1 IsTopMost: False ButtonPressed=> ButtonPressed
