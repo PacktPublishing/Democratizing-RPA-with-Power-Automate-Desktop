@@ -1,0 +1,10 @@
+
+FUNCTION Main_copy GLOBAL
+    DISABLE MouseAndKeyboard.BlockInput BlockIt: True
+    CALL LaunchPPT
+    CALL CreateSlide1
+    CALL SystemInfoScreenshot
+    CALL CreateSlide2
+    CALL SaveAndClosePPT
+    DISABLE MouseAndKeyboard.BlockInput BlockIt: False
+END FUNCTION

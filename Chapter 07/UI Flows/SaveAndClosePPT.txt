@@ -1,0 +1,7 @@
+
+FUNCTION SaveAndClosePPT GLOBAL
+    MouseAndKeyboard.SendKeys.FocusAndSendKeys TextToSend: $'''{Control}({S})''' DelayBetweenKeystrokes: 10 SendTextAsHardwareKeys: False
+    MouseAndKeyboard.SendKeys.FocusAndSendKeys TextToSend: $'''System Report %PSHostname%''' DelayBetweenKeystrokes: 10 SendTextAsHardwareKeys: False
+    # close PowerPoint
+    MouseAndKeyboard.SendMouseClick.ClickAt ClickType: MouseAndKeyboard.MouseClickType.LeftClick MillisecondsDelay: 0 X: 1432 Y: 55 RelativeTo: MouseAndKeyboard.PositionRelativeTo.Screen MovementStyle: MouseAndKeyboard.MovementStyle.Instant
+END FUNCTION

@@ -1,0 +1,7 @@
+# Hit the Windows button
+MouseAndKeyboard.SendMouseClick.ClickAt ClickType: MouseAndKeyboard.MouseClickType.LeftClick MillisecondsDelay: 0 X: 1198 Y: 1748 RelativeTo: MouseAndKeyboard.PositionRelativeTo.Screen MovementStyle: MouseAndKeyboard.MovementStyle.Instant
+# Type "Powerpoint"
+DISABLE MouseAndKeyboard.SendMouseClick.ClickAt ClickType: MouseAndKeyboard.MouseClickType.LeftClick MillisecondsDelay: 0 X: 1298 Y: 344 RelativeTo: MouseAndKeyboard.PositionRelativeTo.Screen MovementStyle: MouseAndKeyboard.MovementStyle.AnimateFast
+MouseAndKeyboard.SendKeys.FocusAndSendKeys TextToSend: $'''PowerPoint''' DelayBetweenKeystrokes: 50 SendTextAsHardwareKeys: True
+# Move the mouse and click the Power Point icon
+MouseAndKeyboard.SendMouseClick.ClickAt ClickType: MouseAndKeyboard.MouseClickType.LeftClick MillisecondsDelay: 0 X: 1684 Y: 928 RelativeTo: MouseAndKeyboard.PositionRelativeTo.Screen MovementStyle: MouseAndKeyboard.MovementStyle.AnimateFast
