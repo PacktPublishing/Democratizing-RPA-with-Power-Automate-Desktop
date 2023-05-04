@@ -1,0 +1,14 @@
+
+FUNCTION ExtractNewOrders GLOBAL
+    # Process new Orders from the database
+    Clipboard.GetText Text=> ClipboardText
+    Text.SplitText.Split Text: ClipboardText StandardDelimiter: Text.StandardDelimiter.NewLine DelimiterTimes: 1 Result=> NewOrdersTextList
+    Variables.CreateNewDatatable InputTable: { ^['OrderNumber', 'OrderDate', 'Status', 'SalesPerson', 'Customer', 'ShipDate', 'Shipping', 'Taxes', 'Total', 'InvoiceID'], [$'''''', $'''''', $'''''', $'''''', $'''''', $'''''', $'''''', $'''''', $'''''', $''''''] } DataTable=> NewOrders
+    LOOP FOREACH CurrentOrderText IN NewOrdersTextList
+        Text.SplitText.Split Text: CurrentOrderText StandardDelimiter: Text.StandardDelimiter.Tab DelimiterTimes: 1 Result=> CurrentOrderItemList
+        SET NewOrders TO NewOrders + [CurrentOrderItemList[0], CurrentOrderItemList[1], CurrentOrderItemList[2], CurrentOrderItemList[3], CurrentOrderItemList[4], CurrentOrderItemList[5], CurrentOrderItemList[6], CurrentOrderItemList[7], CurrentOrderItemList[8], '']
+    END
+    # Delete the first 2 rows from the table (empty first row and header)
+    Variables.DeleteRowFromDataTable DataTable: NewOrders RowIndex: 0
+    Variables.DeleteRowFromDataTable DataTable: NewOrders RowIndex: 0
+END FUNCTION

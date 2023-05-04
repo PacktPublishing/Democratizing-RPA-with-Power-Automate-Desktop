@@ -1,0 +1,7 @@
+
+FUNCTION Main_copy GLOBAL
+    CALL GetNorthWindNewOrders
+    CALL ExtractNewOrders
+    CALL InvoiceOrders
+    CALL WriteBackInvoiceIDs
+END FUNCTION
