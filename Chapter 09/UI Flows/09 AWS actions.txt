@@ -1,0 +1,11 @@
+AWS.CreateEc2Session.CreateEc2SessionWithAccessKeys AccessKeyId: AccessKey Secret: Secret RegionEndpoint: $'''eu-west-1''' Ec2Client=> Ec2Client
+AWS.GetAvailableEC2Instances Ec2Client: Ec2Client InstanceState: AWS.InstanceState.All Ec2InstancesInfo=> Ec2InstancesInfo
+LOOP FOREACH CurrentItem IN Ec2InstancesInfo
+    IF CurrentItem.InstanceState = $'''Stopped''' THEN
+        Display.ShowMessageDialog.ShowMessage Title: $'''VM instance stopped''' Message: $'''The VM instance %CurrentItem.InstanceID% is stopped. Do you want to start it?''' Icon: Display.Icon.Question Buttons: Display.Buttons.YesNo DefaultButton: Display.DefaultButton.Button1 IsTopMost: True ButtonPressed=> ButtonPressed
+        IF ButtonPressed = $'''Yes''' THEN
+            AWS.StartEC2Instance Ec2Client: Ec2Client InstanceIds: CurrentItem.InstanceID StartingEc2Instances=> StartingEc2Instances
+        END
+    END
+END
+AWS.EndEC2Session Ec2Client: Ec2Client

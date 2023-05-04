@@ -1,0 +1,10 @@
+Azure.CreateSession ClientId: $'''55c3c6be-fe97-423f-9c16-6a473251a0ce''' ClientSecret: ClientSecret TenantId: $'''a568e04d-9804-441c-a9b6-a104903a0238''' SubscriptionId: $'''bee963f2-566d-4ce3-a3ef-0fb65afa0365''' AzureClient=> AzureClient
+Azure.GetVirtualMachines AzureClient: AzureClient ResourceGroup: ResourceGroup Status: Azure.VMStatus.Any VirtualMachinesInfo=> VirtualMachinesInfo
+SET VMName TO VirtualMachinesInfo[0].Name
+IF VirtualMachinesInfo[0].Status <> $'''running''' THEN
+    Azure.StartVirtualMachine AzureClient: AzureClient VirtualMachineName: VMName ResourceGroup: ResourceGroup
+END
+Azure.CreateManagedDisk.CreateManagedDisk AzureClient: AzureClient DiskName: $'''paddisk2''' ResourceGroupCreateOption: Azure.ResourceGroupCreateOption.UseExisting ResourceGroup: ResourceGroup Location: Location SizeInGb: 10 StorageAccountType: Azure.StorageAccountType.Standard ManagedDisk=> ManagedDisk
+WAIT 10
+Azure.AttachDisk.AttachManagedDisk AzureClient: AzureClient VirtualMachineName: VMName ResourceGroup: ResourceGroup DiskName: $'''paddisk2''' DiskResourceGroup: ResourceGroup
+Azure.EndSession AzureClient: AzureClient
